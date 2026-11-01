@@ -1,0 +1,4 @@
+# Optional local transcription engine (GPU/CPU heavy). Install when you want
+# `TRANSCRIPTION_PROVIDER=faster_whisper` to actually run.
+-r requirements.txt
+faster-whisper==1.1.0

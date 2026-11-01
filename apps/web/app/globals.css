@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light theme */
+    --background: 150 12% 97%;
+    --foreground: 160 18% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 160 18% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 160 18% 10%;
+    --primary: 112 100% 34%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 150 10% 93%;
+    --secondary-foreground: 160 18% 14%;
+    --muted: 150 10% 94%;
+    --muted-foreground: 158 8% 38%;
+    --accent: 112 100% 34%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 72% 45%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 140 65% 34%;
+    --warning: 38 92% 40%;
+    --border: 150 12% 86%;
+    --input: 150 12% 86%;
+    --ring: 112 100% 34%;
+    --radius: 0.75rem;
+    --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  }
+
+  .dark {
+    /* ClipFoam dark theme — near-black surfaces with neon-green accent */
+    --background: 190 24% 4%;        /* #080B0D */
+    --foreground: 150 8% 96%;        /* #F5F7F6 */
+    --card: 190 14% 10%;             /* #151D20 */
+    --card-foreground: 150 8% 96%;
+    --popover: 192 16% 8%;
+    --popover-foreground: 150 8% 96%;
+    --primary: 108 100% 54%;         /* #39FF14 */
+    --primary-foreground: 190 30% 5%;
+    --secondary: 192 16% 10%;        /* #101619 */
+    --secondary-foreground: 150 8% 92%;
+    --muted: 192 14% 12%;
+    --muted-foreground: 148 7% 63%;  /* #9AA7A0 */
+    --accent: 108 100% 54%;
+    --accent-foreground: 190 30% 5%;
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 140 70% 48%;
+    --warning: 38 92% 55%;
+    --border: 150 13% 18%;           /* #27332D */
+    --input: 150 13% 20%;
+    --ring: 108 100% 54%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans);
+    font-feature-settings: 'cv11', 'ss01';
+  }
+
+  ::selection {
+    @apply bg-primary/25 text-foreground;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-full border-2 border-transparent bg-muted-foreground/30 bg-clip-content;
+  }
+}
+
+@layer components {
+  .surface-grid {
+    background-image:
+      linear-gradient(to right, hsl(var(--border) / 0.35) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--border) / 0.35) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse at top, black 30%, transparent 75%);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .mono-label {
+    @apply font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
