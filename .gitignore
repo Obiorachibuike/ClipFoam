@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+.mypy_cache/
+
+# Node
+node_modules/
+.next/
+out/
+.vercel/
+.turbo/
+npm-debug.log*
+yarn-error.log*
+
+# Env & secrets
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Local runtime data (media, db, temp)
+data/
+apps/api/data/
+*.db
+*.sqlite3
+media/
+tmp/
+
+# OS / editors
+.DS_Store
+.idea/
+.vscode/
+coverage/
+*.log
+
+# TypeScript build info
+*.tsbuildinfo
